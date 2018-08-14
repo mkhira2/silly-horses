@@ -1,4 +1,7 @@
 import time, random
+from colorama import init, Fore
+
+init(autoreset=True)
 
 # global variables; increments if user opts to play_again
 raceNumber = 1
@@ -44,7 +47,7 @@ while play:
                 print('That horse isn\'t running tonight.\n')
 
     # get bet from user
-    print('Alright, your bet is placed for the {} horse, {}. Good luck!\n'.format(myBet, allHorseNames[myBet - 1]))
+    print(Fore.GREEN + 'Alright, your bet is placed for the {} horse, {}. Good luck!\n'.format(myBet, allHorseNames[myBet - 1]))
     wait(2)
 
     # pre-race
@@ -64,7 +67,7 @@ while play:
     wait(3)
     print('They\'re at the finish line, and out of nowhere it\'s the...\n')
     wait(4)
-    print('{} horse, {}, for the win!\n'.format(horseIndexes[3], horseNames[3]))
+    print(Fore.GREEN + '{} horse, {}, for the win!\n'.format(horseIndexes[3], horseNames[3]))
     wait(2)
 
     # resolve bet
