@@ -45,6 +45,11 @@ class DataClassHorse:
 
 
 class Track(Horse):
+    '''
+    TODO add a fields to deal with text in race, this way you can instantiate new classes with the text you'd like.
+    ie self.welcome = welcome
+    '''
+
     def __init__(self, track):
         self.track = track
         self.start_gate = []
