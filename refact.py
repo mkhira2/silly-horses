@@ -28,14 +28,24 @@ class Horse:
 
 
 class Track(Horse):
-    def __init__(self, track, name, number):
+    def __init__(self, track):
         self.track = track
-        Horse.__init__(self, name, number)
+        self.start_gate = []
 
     def getTrackName(self):
         return self.track
 
+    def pop_starting_gate(self, horse):
+        self.start_gate.append(horse)
 
-delta_downs = Track('Delta Downs', 'Orchids of Asia', 11)
 
-print(delta_downs.getTrackName())
+kenji = Horse('kenji', 11)
+patrick = Horse('patrick', 14)
+james = Horse('james', 22)
+
+gate = [kenji, james, patrick]
+
+delta = Track('delta_downs')
+
+for horse in gate:
+    delta.pop_starting_gate(horse)
