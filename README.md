@@ -10,6 +10,9 @@ More like the Quadruple Crown amirite - Kentucky Derby, Preakness, Belmont Stake
 ```
 git clone https://github.com/mkhira2/silly-horses.git
 cd silly-horses
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 python3 silly-horses.py
 
 Place your bets.
