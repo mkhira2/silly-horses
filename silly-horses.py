@@ -18,7 +18,10 @@ while play:
     def getRandomHorseName():
         return random.choice(allHorseNames)
 
-    allHorseNames = ['Bad Horse', 'Big John', 'Dollar', 'Gunpowder', 'Maximus', 'Shadowfax', 'Sylvester', 'Two Bits']
+    allHorseNames = [
+        'Bad Horse', 'Big John', 'Dollar', 'Gunpowder', 'Maximus', 'Shadowfax',
+        'Sylvester', 'Two Bits'
+    ]
 
     # get horse names and numbers
     horseNames = {}
@@ -37,7 +40,10 @@ while play:
     # validate user input is a number between 1-8
     while True:
         try:
-            myBet = int(raw_input('Which horse would you like to bet on? Please select 1-8: '))
+            myBet = int(
+                raw_input(
+                    'Which horse would you like to bet on? Please select 1-8: '
+                ))
         except ValueError:
             print('That\'s not a number!\n')
         else:
@@ -47,7 +53,9 @@ while play:
                 print('That horse isn\'t running tonight.\n')
 
     # get bet from user
-    print(Fore.GREEN + 'Alright, your bet is placed for the {} horse, {}. Good luck!\n'.format(myBet, allHorseNames[myBet - 1]))
+    print(Fore.GREEN +
+          'Alright, your bet is placed for the {} horse, {}. Good luck!\n'.
+          format(myBet, allHorseNames[myBet - 1]))
     wait(2)
 
     # pre-race
@@ -59,15 +67,20 @@ while play:
     wait(2)
 
     # race
-    print('Here comes the {} horse, {}!'.format(horseIndexes[0], horseNames[0]))
+    print('Here comes the {} horse, {}!'.format(horseIndexes[0],
+                                                horseNames[0]))
     wait(3)
-    print('{}, the {} horse, is falling behind!'.format(horseNames[1], horseIndexes[1]))
+    print('{}, the {} horse, is falling behind!'.format(
+        horseNames[1], horseIndexes[1]))
     wait(3)
-    print('And now from the back, the {} horse {} is coming up strong!\n'.format(horseIndexes[2], horseNames[2]))
+    print(
+        'And now from the back, the {} horse {} is coming up strong!\n'.format(
+            horseIndexes[2], horseNames[2]))
     wait(3)
     print('They\'re at the finish line, and out of nowhere it\'s the...\n')
     wait(4)
-    print(Fore.GREEN + '{} horse, {}, for the win!\n'.format(horseIndexes[3], horseNames[3]))
+    print(Fore.GREEN + '{} horse, {}, for the win!\n'.format(
+        horseIndexes[3], horseNames[3]))
     wait(2)
 
     # resolve bet
@@ -79,12 +92,14 @@ while play:
         betsLost = betsLost + 1
         print('You lost.\n')
         wait(2)
-    
+
     # ask user to play again
     play_again = raw_input("If you'd like to play again, please type 'yes': ")
     if play_again.lower() == 'yes' or play_again.lower() == 'y':
         raceNumber += 1
         continue
     else:
-        print('Thanks for playing. You won {} bet(s) and lost {} bet(s).'.format(betsWon, betsLost))
+        print(
+            'Thanks for playing. You won {} bet(s) and lost {} bet(s).'.format(
+                betsWon, betsLost))
         break
