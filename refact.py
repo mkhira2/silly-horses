@@ -22,10 +22,10 @@ class Horse:
         self.color = color
         self.jockey = jockey
 
-    def getName(self):
+    def get_name(self):
         return self.name
 
-    def getNumber(self):
+    def get_number(self):
         return self.number
 
 
@@ -81,7 +81,7 @@ class Track(Horse):
             self.start_gate[2].number, self.start_gate[2].name))
         time.sleep(2)
 
-    def getTrackName(self):
+    def get_track_name(self):
         return self.track
 
     def pop_gate(self, gate):
